@@ -202,11 +202,11 @@ g2 = plot(Ttrain1(N0+1:end,1),Ttrain1(N0+1:end,2),'p','LineStyle','none','Marker
 title('(b). Mean estimate by Exp-BQ','Fontsize',12,'FontName', 'Helvetica')
 legend([g1,g2],{'Initial training points','Actively designed points'},'Orientation','horizontal','Box','off','Fontsize',12,'FontName', 'Helvetica','Location','southoutside');
 
- fprintf('模型调用次数： %.0f\n', Ncall1);
- fprintf('模型证据估计值： %.4f\n', MeanZ(end));
- fprintf('模型证据估计COV： %.4f\n', STDZ(end)/MeanZ(end));
- fprintf('模型证据参考值： %.4f\n', ZRef);
- fprintf('模型证据参考值CoV： %.4f\n', ZRefCov);
+  fprintf('Total number of likelihood calls： %.0f\n', Ncall1);
+ fprintf('Mean estimate of model evidence： %.4f\n', MeanZ(end));
+ fprintf('COV of the mean estimate： %.4f\n', STDZ(end)/MeanZ(end));
+ fprintf('Reference value of model evidence computed by MC： %.4f\n', ZRef);
+ fprintf('CoV of reference estimate by MC： %.4f\n', ZRefCov);
 
 
 
@@ -281,5 +281,6 @@ function STDPredLike = PostSTDLike(GPRmodel1,z)
   STDPred = max(STDPred,1e-6);
   STDPredLike = (exp(STDPred.^2)-1).*exp(2*MeanPred+STDPred.^2);
 end
+
 
 

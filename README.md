@@ -1,3 +1,15 @@
+**The BQ_2D code implement the Bayesian Quadrature (BQ), equipped with four new acuqisition functions, for estimating posteriors and the associated model evidence with desired accuracy. One can refer to Algorithm 1 in the following reference for details. Results in Figure 3-6 of this paper are produced with this code [2].   
+
+**The TBQ_2D code implements the Transitional Bayesian Quadrature(TBQ) algorithm for Bayesian model inference, with the aim of estimating both posteriors and model evidences with desired accuracy. The method is capable of estimating these two terms with several dozens or at most several hundreds of likelihood calls, and epsecially effective for model with posteriors showing complex features like multy-modalities, high sharpness and nonlinear dependencies. The TBQ framework is originally developed in Ref.[1], and substentially improved in Ref.[2], with the developments of four new acquisition functions (new PUQ, PVC, PLUR and PEUR), and an alternative scheme for quantifying prediction uncertianties. This code implements the four two-dimensional exmaples in exmpale 1 of Ref. [2], where results in Figure 7-10 are produced with this code
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Source articles%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%[1]. Wei, Pengfei. "Bayesian model inference with complex posteriors: Exponential-impact-informed Bayesian Quadrature."                  %%%%%%
+%     Mechanical Systems and Signal Processing 239 (2025): 113333.                                                                        %%%%%%
+%[2]. Song, Jingwen, and Wei, Pengfei. "Bayesian Model Inference using Bayesian Quadrature: the Art of Acquisition Functions and Beyond." %%%%%%
+%     arXiv preprint arXiv:2510.08974 (2025), submitted to Mechanical Systems and Signal Processing                                       %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 Run the BQ_2D code, it is required to input the index of problem to solved and the index of acquisition function to be used. For example, with the following inputs,
 Input the index of problem to be solved: 2
 Input the index of Acqusition function (0. PUQ (old version) 1. PUQ (new version), 2. PVC, 3. PLUR, 4. PEUR):2
